@@ -30,5 +30,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation project(':beautylayoutmanager')
 }

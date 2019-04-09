@@ -20,16 +20,17 @@
         android:supportsRtl="true"
         android:theme="@style/MyTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.xianfeng92.beautylayoutmanager.MainActivity">
+        <activity android:name=".Echelon.EchelonActivity"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/MyTheme"
-            android:name=".TanTan.TanTanActivity">
-        </activity>
+            android:name=".TanTan.TanTanActivity"
+            android:theme="@style/MyTheme"></activity>
     </application>
 
 </manifest>

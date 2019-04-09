@@ -10,6 +10,7 @@ import com.xianfeng92.beautylayoutmanager.CardLayoutManager.CardLayoutManager;
 import com.xianfeng92.beautylayoutmanager.CardLayoutManager.OnCardSwipeListener;
 import com.xianfeng92.beautylayoutmanager.R;
 import com.xianfeng92.beautylayoutmanager.StatusBar.StatusBarUtil;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TanTanActivity extends AppCompatActivity {
@@ -18,28 +19,36 @@ public class TanTanActivity extends AppCompatActivity {
     TanTanAdapter tanTanAdapter;
     private CardItemTouchHelperCallback cardItemTouchHelperCallback;
     private CardLayoutManager cardLayoutManager;
-    private List<SwipeCardEntity> mDatas = SwipeCardEntity.initDatas();
+    private List<SwipeCardEntity> mDatas = getDatas();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tantan_layout);
-        //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
-        StatusBarUtil.setRootViewFitsSystemWindows(this,false);
-        //设置状态栏透明
-        StatusBarUtil.setTranslucentStatus(this);
-        StatusBarUtil.setTranslucentNavigationBar(this);
-        //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
-        //所以如果你是这种情况,请使用以下代码, 设置状态使用深色文字图标风格, 否则你可以选择性注释掉这个if内容
-        if (!StatusBarUtil.setStatusBarDarkTheme(this, true)) {
-            //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
-            //这样半透明+白=灰, 状态栏的文字能看得清
-            StatusBarUtil.setStatusBarColor(this,0x55000000);
-        }
+        StatusBarUtil.setStatusBarAndNavigationBarTranslucent(this);
         mRecycleView = findViewById(R.id.recyclerView);
         mRecycleView.setItemAnimator(new DefaultItemAnimator());
         tanTanAdapter = new TanTanAdapter(R.layout.tantan_item,mDatas);
         mRecycleView.setAdapter(tanTanAdapter);
+        setCardItemTouchHelperCallback();
+    }
+
+    public static List<SwipeCardEntity> getDatas() {
+        List<SwipeCardEntity> datas = new ArrayList<>();
+        int i = 1;
+        datas.add(new SwipeCardEntity(i++, "https://ws1.sinaimg.cn/large/0065oQSqly1g0ajj4h6ndj30sg11xdmj.jpg", "起"));
+        datas.add(new SwipeCardEntity(i++, "https://ws1.sinaimg.cn/large/0065oQSqly1g04lsmmadlj31221vowz7.jpg", "一"));
+        datas.add(new SwipeCardEntity(i++, "https://ws1.sinaimg.cn/large/0065oQSqgy1fze94uew3jj30qo10cdka.jpg", "个"));
+        datas.add(new SwipeCardEntity(i++, "https://ws1.sinaimg.cn/large/0065oQSqly1fytdr77urlj30sg10najf.jpg", "名"));
+        datas.add(new SwipeCardEntity(i++, "https://ws1.sinaimg.cn/large/0065oQSqly1fymj13tnjmj30r60zf79k.jpg", "字"));
+        datas.add(new SwipeCardEntity(i++, "https://ws1.sinaimg.cn/large/0065oQSqgy1fy58bi1wlgj30sg10hguu.jpg", "好"));
+        datas.add(new SwipeCardEntity(i++, "https://ws1.sinaimg.cn/large/0065oQSqgy1fxd7vcz86nj30qo0ybqc1.jpg", "难"));
+        datas.add(new SwipeCardEntity(i++, "https://ws1.sinaimg.cn/large/0065oQSqgy1fwgzx8n1syj30sg15h7ew.jpg", "呀"));
+        return datas;
+    }
+
+
+    private void setCardItemTouchHelperCallback(){
         cardItemTouchHelperCallback = new CardItemTouchHelperCallback(tanTanAdapter,mDatas);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(cardItemTouchHelperCallback);
         cardLayoutManager = new CardLayoutManager(mRecycleView,itemTouchHelper);

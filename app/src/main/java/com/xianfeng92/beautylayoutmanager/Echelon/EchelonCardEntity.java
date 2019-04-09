@@ -1,26 +1,29 @@
-package com.xianfeng92.beautylayoutmanager.TanTan;
+package com.xianfeng92.beautylayoutmanager.Echelon;
 
 
 /**
  * Created By zhongxianfeng on 19-4-9
  * github: https://github.com/xianfeng92
  */
-public class SwipeCardEntity {
+public class EchelonCardEntity {
+
     private int postition;
     private String url;
     private String name;
+    private String content;
 
-    public SwipeCardEntity(int postition, String url, String name) {
+    public EchelonCardEntity(int postition, String url, String name, String content) {
         this.postition = postition;
         this.url = url;
         this.name = name;
+        this.content = content;
     }
 
     public int getPostition() {
         return postition;
     }
 
-    public SwipeCardEntity setPostition(int postition) {
+    public EchelonCardEntity setPostition(int postition) {
         this.postition = postition;
         return this;
     }
@@ -29,7 +32,7 @@ public class SwipeCardEntity {
         return url;
     }
 
-    public SwipeCardEntity setUrl(String url) {
+    public EchelonCardEntity setUrl(String url) {
         this.url = url;
         return this;
     }
@@ -38,8 +41,17 @@ public class SwipeCardEntity {
         return name;
     }
 
-    public SwipeCardEntity setName(String name) {
+    public EchelonCardEntity setName(String name) {
         this.name = name;
         return this;
+    }
+
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

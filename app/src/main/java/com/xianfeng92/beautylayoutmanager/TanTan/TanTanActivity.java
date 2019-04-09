@@ -19,12 +19,13 @@ public class TanTanActivity extends AppCompatActivity {
     TanTanAdapter tanTanAdapter;
     private CardItemTouchHelperCallback cardItemTouchHelperCallback;
     private CardLayoutManager cardLayoutManager;
-    private List<SwipeCardEntity> mDatas = getDatas();
+    private List<SwipeCardEntity> mDatas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tantan_layout);
+        mDatas.addAll(getDatas());
         StatusBarUtil.setStatusBarAndNavigationBarTranslucent(this);
         mRecycleView = findViewById(R.id.recyclerView);
         mRecycleView.setItemAnimator(new DefaultItemAnimator());

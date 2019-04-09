@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.xianfeng92.beautylayoutmanager.Carouse.CarouseActivtity;
 import com.xianfeng92.beautylayoutmanager.Echelon.EchelonActivity;
 import com.xianfeng92.beautylayoutmanager.StatusBar.StatusBarUtil;
 import com.xianfeng92.beautylayoutmanager.TanTan.TanTanActivity;
@@ -26,5 +28,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, EchelonActivity.class));
             }
         });
+        findViewById(R.id.btnCarouse).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CarouseActivtity.class));
+            }
+        });
+
     }
 }

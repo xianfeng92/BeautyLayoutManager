@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/MyTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Echelon.EchelonActivity"></activity>
+        <activity android:name=".Carouse.CarouseActivtity"></activity>
+        <activity android:name=".Echelon.EchelonActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +31,7 @@
         </activity>
         <activity
             android:name=".TanTan.TanTanActivity"
-            android:theme="@style/MyTheme"></activity>
+            android:theme="@style/MyTheme" />
     </application>
 
 </manifest>

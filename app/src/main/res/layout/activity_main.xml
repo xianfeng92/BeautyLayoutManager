@@ -25,8 +25,8 @@
         android:text="梯层界面"/>
 
     <Button
-        android:id="@+id/btnLoopGallery"
+        android:id="@+id/btnCarouse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="横向、循环、视差 画廊"/>
+        android:text="转盘界面"/>
 </LinearLayout>

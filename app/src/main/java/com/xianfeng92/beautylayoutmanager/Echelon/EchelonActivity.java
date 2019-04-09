@@ -15,6 +15,7 @@ public class EchelonActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private EchelonLayoutManager mLayoutManager;
     List<EchelonCardEntity> mDatas;
+    private EchelonAdapter echelonAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +23,15 @@ public class EchelonActivity extends AppCompatActivity {
         setContentView(R.layout.echelon_layout);
         StatusBarUtil.setStatusBarAndNavigationBarTranslucent(this);
         mRecyclerView = findViewById(R.id.recyclerView);
+        mDatas = getDatas();
         init();
     }
 
     private void init() {
-        mDatas = getDatas();
         mLayoutManager = new EchelonLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(new EchelonAdapter(R.layout.echelon_item,mDatas));
+        echelonAdapter = new EchelonAdapter(R.layout.echelon_item,mDatas);
+        mRecyclerView.setAdapter(echelonAdapter);
     }
 
     public List<EchelonCardEntity> getDatas() {

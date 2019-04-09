@@ -20,7 +20,7 @@ public interface CardConfig {
     /**
      * 卡片滑动时默认倾斜的角度
      */
-    float DEFAULT_ROTATE_DEGREE = 15f;
+    float DEFAULT_ROTATE_DEGREE = 1f;
     /**
      * 卡片滑动时不偏左也不偏右
      */

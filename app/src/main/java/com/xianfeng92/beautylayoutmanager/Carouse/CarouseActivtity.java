@@ -7,7 +7,7 @@ import com.xianfeng92.beautylayoutmanager.Carousellayoutmanager.CarouselLayoutMa
 import com.xianfeng92.beautylayoutmanager.Carousellayoutmanager.CarouselZoomPostLayoutListener;
 import com.xianfeng92.beautylayoutmanager.Carousellayoutmanager.CenterScrollListener;
 import com.xianfeng92.beautylayoutmanager.R;
-
+import com.xianfeng92.beautylayoutmanager.StatusBar.StatusBarUtil;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +22,9 @@ public class CarouseActivtity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carouse_layout);
+        StatusBarUtil.setStatusBarAndNavigationBarTranslucent(this);
         mDatas.addAll(getDatas());
-        layoutManager = new CarouselLayoutManager(CarouselLayoutManager.VERTICAL, true);
+        layoutManager = new CarouselLayoutManager(CarouselLayoutManager.HORIZONTAL, true);
         layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(layoutManager);

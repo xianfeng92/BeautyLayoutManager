@@ -8,6 +8,6 @@ A Library for RecycleView LayoutManager
 
 ------------------------------------------------
 
-| EchelonLayoutManager | SkidRightLayoutManager | SlideLayoutManager |
+| EchelonLayoutManager | CarouselLayoutManager | CardLayoutManager |
 | :----: | :---:| :---:|
 |![img1](https://github.com/xianfeng92/BeautyLayoutManager/blob/master/image/s1.gif) |  ![img2](https://github.com/xianfeng92/BeautyLayoutManager/blob/master/image/s2.gif)| ![img3](https://github.com/xianfeng92/BeautyLayoutManager/blob/master/image/s3.gif)|

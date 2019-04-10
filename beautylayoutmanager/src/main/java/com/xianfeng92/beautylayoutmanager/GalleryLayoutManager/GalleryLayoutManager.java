@@ -685,7 +685,6 @@ public class GalleryLayoutManager extends RecyclerView.LayoutManager implements 
         }
         return mState;
     }
-
     private int calculateScrollDirectionForPosition(int position) {
         if (getChildCount() == 0) {
             return LAYOUT_START;
@@ -1048,7 +1047,6 @@ public class GalleryLayoutManager extends RecyclerView.LayoutManager implements 
             final int containerCenter = (int) ((end - start) / 2.f);
             return containerCenter - childCenter;
         }
-
 
         @Override
         protected void onTargetFound(View targetView, RecyclerView.State state, Action action) {

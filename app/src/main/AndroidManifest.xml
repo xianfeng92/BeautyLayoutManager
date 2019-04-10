@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/MyTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Carouse.CarouseActivtity"></activity>
+        <activity android:name=".Gallery.GalleryActivity"></activity>
+        <activity android:name=".Carouse.CarouseActivtity" />
         <activity android:name=".Echelon.EchelonActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

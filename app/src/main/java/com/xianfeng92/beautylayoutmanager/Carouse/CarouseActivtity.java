@@ -33,7 +33,6 @@ public class CarouseActivtity extends AppCompatActivity {
         mRecyclerView.addOnScrollListener(new CenterScrollListener());
     }
 
-
     public List<CarouseCardEntity> getDatas() {
         List<CarouseCardEntity> datas = new ArrayList<>();
         int i = 1;
